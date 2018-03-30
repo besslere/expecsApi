@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="icon" href="img/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/kaifa.css"/>
+    <title>快邮快查-开发者文档</title>
+</head>
+<body>
+    <div class="header">
+        <div class="ctn">
+            <div class="logo">
+                <a href="#">
+                    <img src="img/logo.png"/>
+                </a>
+            </div>
+            <span>| &nbsp;&nbsp;开发者文档</span>
+            <a class="back" href="http://www.expecs.com">
+                返回首页
+            </a>
+        </div>
+    </div>
+        <div class="box">
+            <div class="boxLf">
+                <dl class="dlOne">
+                    <dd>
+                        <a href="#">－运单查询API</a>
+                    </dd>
+                    <dd>
+                        <a class="tiao" href="tiaozhuan.html">－跳转API</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="boxRt">
+                <div class="title">
+                    <h2>
+                        track.expecs.com 获得物流单号的跟踪信息
+                        <span>（免费）</span>
+                    </h2>
+                </div>
+                <ul class="quickShow">
+                    <li>1.<a href="#">应用场景</a></li>
+                    <li>2.<a href="#">是否需要授权</a></li>
+                    <li>3.<a href="#">请求地址</a></li>
+                    <li>4.<a href="#">输入参数</a></li>
+                    <li>5.<a href="#">返回结果</a></li>
+                    <li>6.<a href="#">返回示例</a></li>
+                    <li>7.<a href="#">API工具</a></li>
+                    <li>8.<a href="#">FAQ</a></li>
+                </ul>
+                <ul class="brief">
+                    <li>简介：通过向指定的地址发送请求，即可返回如JSON、XML等格式的跟综结果</li>
+                </ul>
+                <dl class="scene">
+                    <dt>1、应用场景</dt>
+                    <dd>（1）电商网站用户打开“我的订单”时调用此API显示结果</dd>
+                    <dd>（2）物流系统对帐前调用此API查一次所有运单的签收状态</dd>
+                </dl>
+                <dl class="scene">
+                    <dt>2、是否需要授权</dt>
+                    <dd>是，请到 <a href="http://www.expecs.com" class="" target="_blank">快递查询API申请地址</a> 申请</dd>
+                </dl>
+                <dl class="scene">
+                    <dt id="d03"> 3、请求地址</dt>
+                    <dd>http://api.kuaidi100.com/api?id=[]&amp;com=[]&amp;nu=[]&amp;valicode=[]&amp;show=[0|1|2|3]&amp;muti=[0|1]&amp;order=[desc|asc] </dd>
+                    <dd>（使用时请先将上述地址中的 中括号 替换成下面相应的值） </dd>
+                </dl>
+                <p class="sceneP">4.输入参数</p>
+                <table class="tab_use_child" cellspacing="0">
+                    <tbody><tr>
+                        <th scope="col" width="90">名称</th>
+                        <th scope="col" width="90">类型</th>
+                        <th scope="col" width="100">是否必需</th>
+                        <th scope="col" style="text-align:left;"> 　　描述</th>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>id</td>
+                        <td> String</td>
+                        <td>是</td>
+                        <td style="text-align:left;">身份授权key，请 <a href="http://www.expecs.com" target="_blank">快递查询接口</a> 进行申请（大小写敏感）</td>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>com</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td style="text-align:left;">要查询的快递公司代码，不支持中文，对应的公司代码见 <br>
+                            《<a href="http://www.expecs.com" class="aco" target="_blank">API URL 所支持的快递公司及参数说明</a>》和《<a href="http://www.expecs.com" class="aco" target="_blank">支持的国际类快递及参数说明</a>》。 <br>
+                            如果找不到您所需的公司，请发邮件至 <a href="mailto:expecs@expecs.com" class="aco"> expecs@expecs.com </a>咨询（大小写不敏感）</td>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>nu</td>
+                        <td> String</td>
+                        <td>是</td>
+                        <td style="text-align:left;">要查询的快递单号，请勿带特殊符号，不支持中文（大小写不敏感）</td>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>valicode</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td style="text-align:left;">已弃用字段，无意义，请忽略。</td>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>show</td>
+                        <td> String</td>
+                        <td>是</td>
+                        <td style="text-align:left;">返回类型： <br>
+                            0：返回json字符串， <br>
+                            1：返回xml对象， <br>
+                            2：返回html对象， <br>
+                            3：返回text文本。 <br>
+                            如果不填，默认返回json字符串。 </td>
+                    </tr>
+                    <tr>
+                        <td>muti</td>
+                        <td> String</td>
+                        <td>是</td>
+                        <td style="text-align:left;">返回信息数量： <br>
+                            1:返回多行完整的信息， <br>
+                            0:只返回一行信息。 <br>
+                            不填默认返回多行。 <br></td>
+                    </tr>
+                    <tr>
+                        <td>order</td>
+                        <td> String</td>
+                        <td>是</td>
+                        <td style="text-align:left;">排序： <br>
+                            desc：按时间由新到旧排列， <br>
+                            asc：按时间由旧到新排列。 <br>
+                            不填默认返回倒序（大小写不敏感） </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h3 class="sceneP">5.返回结果</h3>
+                <table class="tab_use_child" cellspacing="0">
+                    <tbody><tr style="background-color: rgb(255, 255, 255);">
+                        <th scope="col" width="260">字段名称</th>
+                        <th scope="col" style="text-align:left;">　　字段含义</th>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>com</td>
+                        <td style="text-align:left;">物流公司编号</td>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>nu</td>
+                        <td style="text-align:left;">物流单号</td>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>time</td>
+                        <td style="text-align:left;">每条跟踪信息的时间</td>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>context</td>
+                        <td style="text-align:left;">每条跟综信息的描述</td>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>state</td>
+                        <td style="text-align:left;">快递单当前的状态 ：　 <br>
+                            0：在途，即货物处于运输过程中；<br>
+                            1：揽件，货物已由快递公司揽收并且产生了第一条跟踪信息；<br>
+                            2：疑难，货物寄送过程出了问题；<br>
+                            3：签收，收件人已签收；<br>
+                            4：退签，即货物由于用户拒签、超区等原因退回，而且发件人已经签收；<br>
+                            5：派件，即快递正在进行同城派件；<br>
+                            6：退回，货物正处于退回发件人的途中；<br>
+                            该状态还在不断完善中，若您有更多的参数需求，欢迎发邮件至 <a href="mailto:expecs@expecs.com" class="aco  ff"> expecs@expecs.com</a> 提出。 </td>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>status</td>
+                        <td style="text-align:left;">查询结果状态： <br>
+                            0：物流单暂无结果， <br>
+                            1：查询成功， <br>
+                            2：接口出现异常，</td>
+                    </tr>
+                    <tr>
+                        <td>message</td>
+                        <td style="text-align:left;">无意义，请忽略</td>
+                    </tr>
+                    <tr>
+                        <td>condition</td>
+                        <td style="text-align:left;">无意义，请忽略</td>
+                    </tr>
+                    <tr style="background-color: rgb(255, 255, 255);">
+                        <td>ischeck</td>
+                        <td style="text-align:left;">无意义，请忽略</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="sceneP">6.返回示例</p>
+                <div class="xmlBox"> <strong>XML格式</strong>
+          <pre>    &lt;xml&gt;
+    &lt;message&gt;ok&lt;/message&gt;
+    &lt;nu&gt;1200722815552&lt;/nu&gt;
+    &lt;ischeck&gt;1&lt;/ischeck&gt;
+    &lt;com&gt;yunda&lt;/com&gt;
+    &lt;status&gt;1&lt;/status&gt;
+    &lt;condition&gt;F00&lt;/condition&gt;
+    &lt;data&gt;
+    &lt;time&gt;2013-03-03 19:24:48&lt;/time&gt;
+    &lt;context&gt;江苏泗阳县公司:进行揽件扫描&lt;/context&gt;
+    &lt;/data&gt;
+    &lt;data&gt;
+    &lt;time&gt;2013-03-03 19:25:10&lt;/time&gt;
+    &lt;context&gt;江苏泗阳县公司:进行发出扫描，将发往：江苏淮安中转站&lt;/context&gt;
+    &lt;/data&gt;
+    &lt;data&gt;
+    &lt;time&gt;2013-03-03 21:44:47&lt;/time&gt;
+    &lt;context&gt;江苏淮安中转站:快件进入分拨中心进行分拨&lt;/context&gt;
+    &lt;/data&gt;
+    &lt;data&gt;
+    &lt;time&gt;2013-03-04 03:22:44&lt;/time&gt;
+    &lt;context&gt;江苏南京中转站:从站点发出，本次转运目的地：江苏南京栖霞区仙林公司&lt;/context&gt;
+    &lt;/data&gt;
+    &lt;data&gt;
+    &lt;time&gt;2013-03-04 08:25:03&lt;/time&gt;
+    &lt;context&gt;江苏南京栖霞区仙林公司:到达目的地网点，快件将很快进行派送&lt;/context&gt;
+    &lt;/data&gt;
+    &lt;data&gt;
+    &lt;time&gt;2013-03-04 13:09:58&lt;/time&gt;
+    &lt;context&gt;江苏南京栖霞区仙林公司:进行派件扫描；派送业务员：孙；（&lt;/context&gt;
+    &lt;/data&gt;
+    &lt;data&gt;
+    &lt;time&gt;2013-03-04 13:19:47&lt;/time&gt;
+    &lt;context&gt;江苏南京栖霞区仙林公司:快件已被 图片 签收&lt;/context&gt;
+    &lt;/data&gt;
+    &lt;state&gt;3&lt;/state&gt;
+    &lt;/xml&gt;
+          </pre>
+                    <br>
+                    <strong>JSON格式</strong>
+          <pre>{
+"message":"ok","status":"1","state":"3","data":[
+  {"time":"2012-07-07 13:35:14","context":"客户已签收"},
+  {"time":"2012-07-07 09:10:10","context":"离开[北京石景山营业厅]派送中，递送员[温]，电话[]"},
+  {"time":"2012-07-06 19:46:38","context":"到达[北京石景山营业厅]"},
+  {"time":"2012-07-06 15:22:32","context":"离开[北京石景山营业厅]派送中，递送员[温]，电话[]"},
+  {"time":"2012-07-06 15:05:00","context":"到达[北京石景山营业厅]"},
+  {"time":"2012-07-06 13:37:52","context":"离开[北京_同城中转站]发往[北京石景山营业厅]"},
+  {"time":"2012-07-06 12:54:41","context":"到达[北京_同城中转站]"},
+  {"time":"2012-07-06 11:11:03","context":"离开[北京运转中心驻站班组] 发往[北京_同城中转站]"},
+  {"time":"2012-07-06 10:43:21","context":"到达[北京运转中心驻站班组]"},
+  {"time":"2012-07-05 21:18:53","context":"离开[福建_厦门支公司] 发往 [北京运转中心_航空]"},
+  {"time":"2012-07-05 20:07:27","context":"已取件，到达 [福建_厦门支公司]"}
+]}
+         </pre>
+                </div>
+                <p class="sceneP">7. API工具</p>
+                <table cellspacing="0" class="tab_tent">
+                    <tbody><tr>
+                        <td width="400">&gt;&gt; 快邮查询范例ASP版（38.2KB）</td>
+                        <td><a href="https://www.expecs.com.rar" class="aco">下载</a></td>
+                    </tr>
+                    <tr>
+                        <td>&gt;&gt; 快邮查询范例PHP版（43.7KB）</td>
+                        <td><a href="https://www.expecs.com.rar" class="aco">下载</a></td>
+                    </tr>
+                    <tr>
+                        <td>&gt;&gt; 快邮查询范例.NET版（38.6KB）</td>
+                        <td><a href="https://www.expecs.com.rar" class="aco">下载</a></td>
+                    </tr>
+                    <tr>
+                        <td>&gt;&gt; 快邮查询范例JAVA版（8.40KB）</td>
+                        <td><a href="https://www.expecs.com.rar" class="aco">下载</a></td>
+                    </tr>
+                    <tr>
+                        <td>&gt;&gt; Shopex、Ecshop、Hishop和最土团购等快递查询插件</td>
+                        <td><a href="https://www.expecs.com.shtml" class="aco" target="_blank">下载</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="sceneP">8.FAQ</p>
+                <ul class="faq8">
+                    <li>(1) 去<a href="https://www.expecs.com" class="aco" target="_blank">快邮博客</a>看看常见问题</li>
+                    <li>(2) 发邮件到 <a href="mailto:expecs@expecs.com" class="aco  ff">expecs@expecs.com</a></li>
+                </ul>
+            </div>
+        </div>
+    <script src="js/jquery-1.11.3.js"></script>
+</body>

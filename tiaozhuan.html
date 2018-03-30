@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="icon" href="img/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/kaifa.css"/>
+    <title>快邮快查-开发者文档</title>
+</head>
+<body>
+    <div class="header">
+        <div class="ctn">
+            <div class="logo">
+                <a href="#">
+                    <img src="img/logo.png"/>
+                </a>
+            </div>
+            <span>| &nbsp;&nbsp;开发者文档</span>
+            <a class="back" href="http://www.expecs.com">
+                返回首页
+            </a>
+        </div>
+    </div>
+    <div class="centerInfo">
+        <div class="box">
+            <div class="boxLf">
+                <dl class="dlOne">
+                    <dd>
+                        <a href="#">－运单查询API</a>
+                    </dd>
+                    <dd style="display: none">
+                        <a class="tiao" href="#">－跳转API</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="boxRt">
+                <div class="title">
+                    <h2>
+                        track.expecs.com 弹出新页面显示物流单号的跟综信息
+                        <span>（免费）</span>
+                    </h2>
+                </div>
+                <ul class="quickShow">
+                    <li>1.<a href="#">应用场景</a></li>
+                    <li>2.<a href="#">是否需要授权</a></li>
+                    <li>3.<a href="#">请求地址</a></li>
+                    <li>4.<a href="#">输入参数</a></li>
+                    <li>5.<a href="#">返回结果</a></li>
+                    <li>6.<a href="#">返回示例</a></li>
+                    <li>7.<a href="#">API工具</a></li>
+                    <li>8.<a href="#">FAQ</a></li>
+                </ul>
+                <ul class="brief">
+                    <li>简介：向指定地址发送请求，跳转至新页面内显示物流单号的跟综信息，支持所有快递，免维护，无需申请。</li>
+                    <li>优势：开发速度快，无需后期维护，不用申请。</li>
+                    <li>案例：<a href="http://www.expecs.com/" class="" target="_blank">麦包包</a>　<a href="http://www.expecs.com.html" class="" target="_blank">神弹宫</a></li>
+                </ul>
+                <dl class="scene">
+                    <dt>1、应用场景</dt>
+                    <dd>（1）电商网站用户打开“我的订单”时调用此API显示结果</dd>
+                </dl>
+                <dl class="scene">
+                    <dt>2、是否需要授权</dt>
+                    <dd>不需要</dd>
+                </dl>
+                <dl class="scene">
+                    <dt> 3、请求地址</dt>
+                    <dd>http://www.expecs.com/chaxun?com=[]&nu=[]</dd>
+                </dl>
+                <p class="sceneP">4.输入参数</p>
+                <table class="tab_use_child" cellspacing="0">
+                    <tbody>
+                        <tr>
+                        <th scope="col" width="90">名称</th>
+                        <th scope="col" width="90">类型</th>
+                        <th scope="col" width="100">是否必需</th>
+                        <th scope="col" style="text-align:left;"> 　　描述</th>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                        <td>com</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td style="text-align:left;">要查询的快递公司的代码，支持中文和模糊输入，支持本网站的所有的快递公司，对应的公司代码见<br>
+                            《<a href="https://www.expecs.com.doc" class="aco" target="_blank">Chaxun URL 支持的快递公司及参数说明</a>》。 <br>
+                            如果找不到您所需的公司，请发邮件至 <a href="mailto:expecs@expecs.com" class="aco"> expecs@expecs.com </a>咨询（大小写不敏感）</td>
+                    </tr>
+                        <tr style="background-color: rgb(255, 255, 255);">
+                            <td>nu</td>
+                            <td> String</td>
+                            <td>是</td>
+                            <td style="text-align:left;">要查询的快递单号，请勿带特殊符号，不支持中文（大小写不敏感）</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl class="scene">
+                    <dt> 5.返回结果</dt>
+                    <dd>直接跳转到快递100的快递公司二级页面显示查询结果。</dd>
+                </dl>
+                <p class="sceneP">6.返回示例</p>
+                <div name="" class="xmlBox02"></div>
+                <p class="sceneP">7. API工具</p>
+                <p class="onlineTest">在线测试</p>
+                <div class="kdi">
+                    <table class="kdi_table">
+                        <tbody><tr>
+                            <td align="right">快递公司：</td>
+                            <td><div class="kdicompany">
+                                <input name="class" id="whole" type="text" class="kdi_input" onclick="sh(e);" value="请选择快递公司" readonly="readonly">
+                                <ul class="kdico" id="chilDiv" style="display:none;">
+                                    <li class="kdico_unit">韵达快运</li>
+                                    <li class="kdico_unit">百世快递</li>
+                                </ul>
+                            </div>
+
+                                <!-- kdicompany--></td>
+                        </tr>
+                        <tr>
+                            <td align="right">单号：</td>
+                            <td><input type="text" id="inputNum" name="" value="" class="inpdanhao" readonly=""></td>
+                        </tr>
+                        <tr>
+                            <td align="right">最终URL：</td>
+                            <td><input type="text" id="inputUrl" name="" value="" class="inpdanhao" readonly=""></td>
+                        </tr>
+                        </tbody></table>
+                    <div class="kdsubmit">
+                        <div class="kdsubmit_pad">
+                            <input type="btn" name="" value="提交并查看返回结果" id="fanhui" class="kdsubput" onclick="gotoQuery();">
+                        </div>
+                        <!--kdsubmit_pad -->
+                    </div>
+                    <!-- kdsubmit-->
+                </div>
+                <p class="onlineTest" style="padding-bottom:20px">调用代码示范</p>
+                <div class="sifan_child">
+                    <div class="sifan_unit">
+                        <div class="phpban">PHP版：</div>
+                        <!--phpban -->
+            <textarea name="" class="phpbanword">&lt;?php
+                $com="yunda";
+                $nu="1900171113992";
+                $context="查询";
+                $link="&lt;a href='//www.kuaidi100.com/chaxun?com=".$com."&amp;nu=".$nu."'&gt;".$context."&lt;/a &gt;";
+                echo $link;
+                ?&gt;&nbsp;</textarea>
+                        <!-- phpbanword-->
+                    </div>
+                    <!--sifan_unit -->
+                    <div class="sifan_unit" style="padding-bottom:10px;">
+                        <div class="phpban">JAVA版：</div>
+                        <!--phpban -->
+            <textarea name="" class="phpbanword">                &lt;%@ page language="java" contentType="text/html; charset=utf-8"
+                pageEncoding="utf-8"%&gt;
+                &lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+                &lt;html &gt;
+                &lt;head &gt;
+                &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" / &gt;
+                &lt;title&gt;&lt;/title &gt;
+                &lt;/head &gt;
+                &lt;body &gt;
+                &lt;%
+                String com = "yunda";
+                String []nulist = {"1900171113992","1200525285018","1200530717992"};
+                for (int i=0; i&lt;nulist.length; i++) {
+                out.println(" &lt; a href=\"//www.kuaidi100.com/chaxun?com="+com+"&amp;nu="+nulist[i]+"\" &gt;"+nulist[i]+" &lt;/a &gt; &lt;br/ &gt;");
+                }
+                %&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;&nbsp;</textarea>
+                        <!-- phpbanword-->
+                    </div>
+                    <!--sifan_unit -->
+                </div>
+                <div class="div_clb"></div>
+                <p class="sceneP">8.FAQ</p>
+                <ul class="faq8">
+                    <li>(1) 去<a href="http://www.expecs.com" class="aco" target="_blank">快递100博客</a>看看常见问题</li>
+                    <li>(2) 发邮件到 <a href="mailto:expecs@expecs.com" class="aco ff">expecs@expecs.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.js"></script>
+</body>

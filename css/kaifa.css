@@ -1,0 +1,390 @@
+body{
+    font: 12px "microsoft yahei",verdana,arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,form,table{
+    margin: 0;
+    padding: 0;
+}
+a{
+    outline: none;
+    text-decoration: none;
+    color: #3278e6;
+}
+a:hover{
+    text-decoration: none;
+}
+.header{
+    position: relative;
+    height: 80px;
+    padding-bottom: 10px;
+    background: #4479df;
+    z-index: 99;
+    min-width: 990px;
+}
+.ctn{
+    width: 990px;
+    margin: auto;
+    clear: both;
+}
+.logo{
+    float: left;
+    margin: 14px 10px 0 14px;
+}
+.logo a{
+    display: inline-block;
+    width: 160px;
+    height: 70px;
+    margin-top: 5px;
+}
+.logo img{
+    width: 158px;
+    height: 44px;
+    border: none;
+    vertical-align: middle;
+}
+.ctn span{
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 27px;
+    color: #fff;
+}
+.back{
+    margin-top: 26px;
+    float: right;
+    font-size: 16px;
+    color: #fff;
+}
+
+.box{
+    width: 1000px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+.boxLf{
+    width: 190px;
+    max-height: 400px;
+    float: left;
+}
+.boxRt{
+    width: 790px;
+    border: 1px solid #a2bbda;
+    float: right;
+    margin-bottom: 20px;
+}
+.dlOne{
+    width: 190px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background: #f5f5f5;
+    color: #323232;
+    list-style: none;
+}
+.dlOne dd{
+    display: block;
+    margin: 0;
+    height: 48px;
+    border-bottom: 1px solid #fff;
+    line-height: 48px;
+    cursor: pointer;
+    text-align: left;
+    color: #5a5a5a;
+    vertical-align: middle;
+}
+.dlOne dd a{
+    display: block;
+    margin: 0;
+    text-indent: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    background: #3278e6;
+    color: #fff;
+    padding-left: 42px;
+}
+.dlOne dd .tiao{
+    color: #828282;
+    background: #f5f5f5;
+}
+.title{
+    float: left;
+    position: relative;
+}
+.title h2{
+    font-size: 16px;
+    vertical-align: middle;
+    color: #323232;
+    padding: 10px;
+    font-weight: bold;
+}
+.title span{
+    font-weight: normal;
+    color: #f00;
+    font-size: 14px;
+}
+.quickShow {
+    display: block;
+    width: 700px;
+    float: left;
+    margin: 0 0 0 10px;
+    background-color: #f5f5f5;
+}
+ul li{
+    list-style: none;
+}
+.quickShow li {
+    margin: 0;
+    display: block;
+    float: left;
+    color: #3278e6;
+    padding: 2px 10px;
+    font-size: 12px;
+    line-height: 22px;
+    vertical-align: middle;
+}
+.brief {
+    display: block;
+    clear: both;
+    margin: 10px 0px 0px 20px;
+    padding-top: 10px;
+    font-size: 14px;
+    line-height: 30px;
+    vertical-align: middle;
+    color: #323232;
+}
+.scene {
+    display: block;
+    margin: 0;
+    padding: 10px 0 10px 20px;
+}
+.scene dt{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    vertical-align: middle;
+    color: #323232;
+}
+.scene dd {
+    font-size: 14px;
+    line-height: 22px;
+    vertical-align: middle;
+    color: #323232;
+}
+.sceneP {
+    display: block;
+    margin: 0;
+    padding: 10px 0 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    vertical-align: middle;
+    color: #323232;
+}
+table{
+    border-spacing: 0;
+}
+.tab_use_child {
+    margin: -10px 0 0 20px;
+    border-collapse: collapse;
+    border: 1px solid #d2d2d2;
+    width: 750px;
+}
+.tab_use_child tr th {
+    text-align: center;
+    font-weight: normal;
+    background-color: #f5f5f5;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 26px;
+    vertical-align: middle;
+}
+.tab_use_child tr td {
+    text-align: center;
+    font-size: 14px;
+    line-height: 26px;
+    vertical-align: top;
+    padding: 0 6px;
+}
+.xmlBox {
+    display: block;
+    margin: -10px 0 0 20px;
+    width: 728px;
+    padding: 0 10px 10px 10px;
+    border: 1px solid #d2d2d2;
+    text-align: left;
+    font-size: 14px;
+    line-height: 22px;
+    vertical-align: middle;
+}
+.xmlBox02 {
+    display: block;
+    margin: -10px 0 0 20px;
+    width: 680px;
+    height: 888px;
+    border: 1px solid #d2d2d2;
+    background: url("../img/sili.gif") no-repeat center 10px;
+}
+.onlineTest {
+    clear: both;
+    margin: 0;
+    width: 730px;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    vertical-align: middle;
+    color: #323232;
+}
+.kdi {
+    width: 408px;
+    margin: 0 auto;
+    text-align: center;
+}
+.kdi_table {
+    border: none;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 14px;
+}
+.kdi_table tr td {
+    padding: 10px 0 10px 0;
+    overflow: visible;
+}
+.kdicompany {
+    width: 329px;
+    height: 29px;
+    position: relative;
+}
+.kdi_input {
+    display: block;
+    float: left;
+    width: 329px;
+    height: 29px;
+    font-size: 14px;
+    line-height: 29px;
+    vertical-align: middle;
+    background: url("../img/dropdown.gif") no-repeat -20px -1px;
+    cursor: pointer;
+    border-top: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+    border-right: 1px solid #d2d2d2;
+    border-bottom: 1px solid #f5f5f5;
+}
+.kdico {
+    width: 327px;
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    top: 33px;
+    background-color: #f5f5f5;
+    border-right: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+}
+.kdico_unit {
+    width: 331px;
+    height: 31px;
+    display: block;
+    font-size: 14px;
+    line-height: 31px;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #323232;
+    text-align: left;
+}
+.inpdanhao {
+    width: 327px;
+    height: 29px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #d2d2d2;
+    border-left: 1px solid #d2d2d2;
+    border-right: 1px solid #d2d2d2;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 14px;
+    line-height: 29px;
+    vertical-align: middle;
+}
+.sifan_child {
+    width: 664px;
+    margin: 0 auto;
+}
+.sifan_unit {
+    width: 664px;
+    float: left;
+    padding-bottom: 30px;
+}
+.phpban {
+    width: 70px;
+    padding-right: 4px;
+    font-size: 14px;
+    text-align: right;
+    color: #323232;
+    float: left;
+}
+.sifan_unit {
+    width: 680px;
+    float: left;
+    padding-bottom: 30px;
+}
+.phpbanword {
+    margin: 0px;
+    padding: 0px;
+    width: 588px;
+    height: 150px;
+    float: right;
+    font-size: 14px;
+    line-height: 22px;
+    color: #323232;
+    border-color: #f5f5f5;
+    border-width: 1px 0 1px 1px;
+    border-style: solid;
+    border: 1px solid #aaa;
+    text-align: left;
+}
+.kdsubmit {
+    float: left;
+    width: 408px;
+    padding-bottom: 20px;
+}
+.kdsubmit_pad {
+    float: left;
+    padding-top: 26px;
+    padding-left: 76px;
+}
+.kdsubput {
+    width: 205px;
+    height: 36px;
+    border: 1px solid #3278e6;
+    background-color: #3278e6;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 36px;
+    vertical-align: middle;
+}
+.tab_tent {
+    margin: -10px 0 0 20px;
+    border-collapse: collapse;
+    width: 730px;
+}
+.tab_tent tr td {
+    text-align: left;
+    font-size: 14px;
+    line-height: 30px;
+    vertical-align: top;
+    padding: 0 6px;
+}
+.faq8 {
+    margin: -10px 0 0 20px;
+    padding-bottom: 30px;
+    width: 730px;
+}
+.faq8 li {
+    text-align: left;
+    font-size: 14px;
+    line-height: 30px;
+    vertical-align: middle;
+}
